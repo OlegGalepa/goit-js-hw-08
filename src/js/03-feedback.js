@@ -1,7 +1,8 @@
 import throttle from 'lodash.throttle';
 import {
-STORAGE_KEY, formRef, formData, dataInputs
+STORAGE_KEY, formRef, dataInputs
 } from './refs';
+let formData = {};
 
 formRef.addEventListener('submit', onSubmitForm);
 formRef.addEventListener('input', throttle(onFormInput, 500)); 
