@@ -1,5 +1,6 @@
+import throttle from 'lodash.throttle';
 import {
-    throttle, STORAGE_KEY, formRef, formData, dataInputs
+STORAGE_KEY, formRef, formData, dataInputs
 } from './refs';
 
 formRef.addEventListener('submit', onSubmitForm);
@@ -21,11 +22,6 @@ export function onSubmitForm(evt) {
 }
 
 function onFormInput(evt) {
-    if (evt.target.name in formRef.elements) {
         formData[evt.target.name] = evt.target.value;
         localStorage.setItem(STORAGE_KEY, JSON.stringify(formData));
-    }
 }
-
-
-
